@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -51,6 +52,20 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				emergency: {
+					DEFAULT: 'hsl(var(--emergency))',
+					foreground: 'hsl(var(--emergency-foreground))',
+					glow: 'hsl(var(--emergency-glow))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))',
+					glow: 'hsl(var(--success-glow))'
+				},
+				medical: {
+					DEFAULT: 'hsl(var(--medical))',
+					foreground: 'hsl(var(--medical-foreground))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -88,7 +103,42 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-emergency': 'pulse-emergency 2s ease-in-out infinite',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'slide-up': 'slide-up 0.3s ease-out'
+			},
+			keyframes: {
+				'pulse-emergency': {
+					'0%, 100%': { 
+						boxShadow: '0 0 0 0 hsl(var(--emergency) / 0.7)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 0 15px hsl(var(--emergency) / 0)' 
+					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				}
+			},
+			backgroundImage: {
+				'gradient-emergency': 'var(--gradient-emergency)',
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-medical': 'var(--gradient-medical)',
+				'gradient-success': 'var(--gradient-success)'
+			},
+			boxShadow: {
+				'emergency': 'var(--shadow-emergency)',
+				'primary': 'var(--shadow-primary)',
+				'medical': 'var(--shadow-medical)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)'
 			}
 		}
 	},
